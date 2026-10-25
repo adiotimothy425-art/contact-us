@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contact form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="w-[1440px] bg-[var(--Green-200)]">
+    <div
+      class="w-[800px] bg-white my-25 mx-auto p-5 rounded-[10px] flex flex-col gap-5"
+    >
+      <h1 class="text-[40px] font-bold">Contact Us</h1>
+      <form action="" class="w-full flex flex-col gap-5">
+        <!-- NAME SECTION -->
+        <div class="flex items-center w-full gap-3">
+          <!-- FIRST NAME -->
+          <div class="w-1/2 flex flex-col gap-2 items-start">
+            <label for="" class="text-[16px] text-[var(--Grey-900)]"
+              >First Name *</label
+            >
+            <input
+              type="text"
+              class="w-full border border-[var(--Grey-500)] rounded-[5px] h-[40px]"
+            />
+          </div>
+          <!-- LAST NAME -->
+          <div class="w-1/2 flex flex-col gap-2 items-start">
+            <label for="" class="text-[16px] text-[var(--Grey-900)]"
+              >Last Name *</label
+            >
+            <input
+              type="text"
+              class="w-full border border-[var(--Grey-500)] rounded-[5px] h-[40px]"
+            />
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- EMAIL SECTION -->
+        <div class="w-full flex flex-col gap-2 items-start">
+          <label for="" class="text-[16px] text-[var(--Grey-900)]"
+            >Email Address *</label
+          >
+          <input
+            type="email"
+            class="w-full border border-[var(--Grey-500)] rounded-[5px] h-[40px]"
+          />
+        </div>
+        <!-- ========================================== -->
+        <!-- QUERY SECTION -->
+        <div class="flex flex-col gap-2 items-start">
+          <label for="" class="text-[16px] text-[var(--Grey-900)]"
+            >Query Type *</label
+          >
+          <div class="flex items-center w-full gap-3">
+            <!-- GENERAL ENQUIRY -->
+            <div
+              class="w-1/2 border border-[var(--Grey-500)] rounded-[5px] h-[40px] flex items-center justify-start p-3 gap-3"
+            >
+              <input type="radio" />
+              <label for="">General Enquiry</label>
+            </div>
+            <!-- SUPPORT REQUEST -->
+            <div
+              class="w-1/2 border border-[var(--Grey-500)] rounded-[5px] h-[40px] flex items-center justify-start p-3 gap-3"
+            >
+              <input type="radio" />
+              <label for="">Support request</label>
+            </div>
+          </div>
+        </div>
+        <!-- ========================================== -->
+        <!-- MESSAGE SECTION -->
+        <div class="w-full flex flex-col gap-2 items-start">
+          <label for="" class="text-[16px] text-[var(--Grey-900)]"
+            >Message *</label
+          >
+          <textarea
+            name=""
+            id=""
+            class="w-full border border-[var(--Grey-500)] rounded-[5px]"
+            rows="4"
+          ></textarea>
+        </div>
+        <!-- ========================================== -->
+        <!-- CONSENT SECTION -->
+        <div class="flex gap-4 items-center">
+          <input type="checkbox" />
+          <p class="text-[16px] text-[var(--Grey-900)]">
+            I consent to being contacted by the team.
+          </p>
+        </div>
+        <!-- ========================================== -->
+        <!-- BUTTON -->
+        <button
+          class="w-full text-white text-[16px] bg-[var(--Green-600)] rounded-[5px] text-center h-[50px]"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <!--   This field is required Last Name This field is
+    required  Please enter a valid email address This field is
+    required Query Type  Please select a query
+    type  This field is required
+    To submit this form, please consent to being contacted Submit Message Sent!
+    Thanks for completing the form. We'll be in touch soon! -->
+  </body>
+</html>
