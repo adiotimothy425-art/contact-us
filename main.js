@@ -86,4 +86,27 @@ form.addEventListener("submit", (e) => {
   } else {
     showError(false, errConsent, consent);
   }
+
+  //QUERY
+  let checkedRadio = document.querySelector("input.query:checked");
+  if (!checkedRadio) {
+    errQueryType.classList.remove("hidden");
+  } else {
+    errQueryType.classList.add("hidden");
+  }
+
+  //IF ALL VALIDATORS PASS, STORE USER DATA, DISPLAY THE SUCCESS TOASTER AND RESET THE FORM
+  if (isValid) {
+    let userData = {
+      firstName: firstName.value.trim(),
+      lastName: lastName.value.trim(),
+      email: email.value.trim(),
+      query: checkedRadio.value,
+      message: message.value.trim(),
+      consent: consent.checked,
+    };
+    console.log("FORM SUBMITTED SUCCESSFULLY", userData);
+    toaster(isValid);
+    form.reset();
+  }
 });
