@@ -42,6 +42,18 @@ let showError = (valid, errMsg, input) => {
   }
 };
 
+query.forEach((eachInput) => {
+  eachInput.addEventListener("change", () => {
+    query.forEach((each) => {
+      let parent = each.parentElement;
+      if (each.checked) {
+        parent.style.backgroundColor = "var(--Green200)";
+      } else {
+        parent.style.backgroundColor = "";
+      }
+    });
+  });
+});
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -108,5 +120,11 @@ form.addEventListener("submit", (e) => {
     console.log("FORM SUBMITTED SUCCESSFULLY", userData);
     toaster(isValid);
     form.reset();
+
+    query.forEach((each) => {
+      let parent = each.parentElement;
+
+      parent.style.backgroundColor = "";
+    });
   }
 });
