@@ -1,0 +1,89 @@
+//Grab all the form elements needed for validation
+let form = document.querySelector(".contactForm");
+let firstName = document.querySelector(".firstName");
+let lastName = document.querySelector(".lastName");
+let email = document.querySelector(".emailAddress");
+let query = document.querySelectorAll(".query");
+let message = document.querySelector(".messageContent");
+let consent = document.querySelector(".consent");
+let button = document.querySelector(".button");
+
+//Grab all the error messages
+let errFirstName = document.querySelector(".error-fn");
+let errLastName = document.querySelector(".error-ln");
+let errEmail = document.querySelector(".error-em");
+let errQueryType = document.querySelector(".error-qt");
+let errMessage = document.querySelector(".error-msg");
+let errConsent = document.querySelector(".error-checkbox");
+
+//SUCCESS TOASTER
+let success = document.querySelector(".success");
+
+//Function to handle the success toaster
+let toaster = (valid) => {
+  if (valid) {
+    success.classList.remove("hidden");
+    setTimeout(() => {
+      success.classList.add("hidden");
+    }, 3000);
+  } else {
+    success.classList.add("hidden");
+  }
+};
+
+//FUNCTION TO HANDLE ERROR MESSAGES
+let showError = (valid, errMsg, input) => {
+  if (valid) {
+    errMsg.classList.remove("hidden");
+    input.style.borderColor = "var(--Red)";
+  } else {
+    errMsg.classList.add("hidden");
+    input.style.borderColor = "";
+  }
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let isValid = true;
+
+  //VALIDATOR FOR ALL FORM ELEMENTS
+  //FIRST NAME
+  if (firstName.value.trim() === "") {
+    showError(true, errFirstName, firstName);
+    isValid = false;
+  } else {
+    showError(false, errFirstName, firstName);
+  }
+
+  //LAST NAME
+  if (lastName.value.trim() === "") {
+    showError(true, errLastName, lastName);
+    isValid = false;
+  } else {
+    showError(false, errLastName, lastName);
+  }
+
+  //EMAIL
+  if (email.value.trim() === "") {
+    showError(true, errEmail, email);
+    isValid = false;
+  } else {
+    showError(false, errEmail, email);
+  }
+
+  //MESSAGE
+  if (message.value.trim() === "") {
+    showError(true, errMessage, message);
+    isValid = false;
+  } else {
+    showError(false, errMessage, message);
+  }
+  //CONSENT
+  if (!consent.checked) {
+    showError(true, errConsent, consent);
+    isValid = false;
+  } else {
+    showError(false, errConsent, consent);
+  }
+});
